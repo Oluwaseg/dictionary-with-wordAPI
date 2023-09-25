@@ -1,0 +1,245 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #282a36;
+  font-family: "Poppins", sans-serif;
+  color: #f8f8f2;
+}
+
+.container {
+  background-color: #44475a;
+  width: 90vmin;
+  max-width: 800px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding: 80px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.search-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-box input {
+  width: 70%;
+  padding: 10px 20px;
+  border: 1px solid #6272a4;
+  background-color: #282a36;
+  color: #f8f8f2;
+  border-radius: 5px;
+  outline: none;
+  font-size: 20px;
+}
+
+.search-box input:focus {
+  border-bottom: 2px solid #ae9cff;
+  background-color: #f8f8f2;
+  color: #282a36;
+}
+
+.search-box button {
+  width: 25%;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  background-color: #50fa7b;
+  cursor: pointer;
+  color: #282a36;
+  border-radius: 5px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.result {
+  position: relative;
+  color: #f8f8f2;
+  margin-top: 20px;
+}
+
+.result h3 {
+  font-size: 30px;
+}
+
+.result .word {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+.result button {
+  background-color: transparent;
+  color: #f8f8f2;
+  border: none;
+  font-size: 18px;
+}
+
+.result .details {
+  display: flex;
+  gap: 10px;
+  margin: 5px 0 20px 0;
+  font-size: 14px;
+}
+
+.word-meaning {
+  color: #f8f8f2;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.word-example {
+  color: #f8f8f2;
+  font-style: italic;
+  border-left: 5px solid #ae9cff;
+  padding-left: 20px;
+  margin-top: 30px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+/* Updated CSS with custom colors for word-history-content */
+
+.word-history {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.word-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.word-history h3 {
+  margin: 0;
+}
+
+.clear-history-btn {
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  background-color: #50fa7b;
+  cursor: pointer;
+  color: #282a36;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.clear-history-btn:hover {
+  background-color: #5af78e;
+}
+
+.word-history-content {
+  flex-grow: 1;
+  background: #f8f8f2;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.word-history-content div {
+  margin-bottom: 5px;
+}
+
+/* Style for individual word history items */
+
+.word-history-content div {
+  background-color: #6272a4;
+  color: #f8f8f2;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.pagination {
+  display: none;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-info {
+  font-size: 14px;
+  color: #f8f8f2;
+}
+
+.loading {
+  display: none;
+  border: 5px solid #f8f8f2;
+  border-top: 5px solid #6272a4;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#page-info {
+  text-align: center;
+  margin: 10px;
+}
+
+/* Center-align the pagination buttons if needed */
+.pagination {
+  text-align: center;
+}
+
+/* Style the pagination buttons with a harmonious color scheme */
+.page-btn {
+  padding: 10px 20px;
+  background: linear-gradient(
+    324deg,
+    rgba(40, 42, 54, 1) 0%,
+    rgba(68, 71, 90, 1) 100%
+  );
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+
+/* Hover effect for buttons */
+.page-btn:hover {
+  background: linear-gradient(
+    45deg,
+    rgba(40, 42, 54, 1) 0%,
+    rgba(68, 71, 90, 1) 100%
+  );
+  padding: 14px;
+}
+
+/* Active state for buttons */
+/* .page-btn:active {
+  background-color: #cd5c5c;
+} */
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

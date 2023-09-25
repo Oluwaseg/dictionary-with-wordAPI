@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap"
+    />
+  </head>
+  <body>
+    <audio id="sound"></audio>
+    <div class="container">
+      <div class="search-box">
+        <input type="text" placeholder="Type the word here..." id="inp-word" />
+        <button id="search-btn">Search</button>
+      </div>
+      <div class="result" id="result"></div>
+      <div class="word-history">
+        <div class="word-history-header">
+          <h3>Word History</h3>
+          <div class="clear-history">
+            <button id="clear-history-btn" class="clear-history-btn">
+              Clear History
+            </button>
+          </div>
+        </div>
+        <div class="word-history-content" id="word-history-content"></div>
+      </div>
+
+      <div id="loading" class="loading"></div>
+      <div id="pagination" class="pagination">
+        <button id="prev-page" class="page-btn">Previous Page</button>
+        <button id="next-page" class="page-btn">Next Page</button>
+        <p id="page-info" class="page-info"></p>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
