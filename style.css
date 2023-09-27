@@ -5,13 +5,12 @@
 }
 
 body {
-  background-color: #282a36;
+  background-color: #b2ebf2;
   font-family: "Poppins", sans-serif;
-  color: #f8f8f2;
 }
 
 .container {
-  background-color: #44475a;
+  background-color: #ffffff;
   width: 90vmin;
   max-width: 800px;
   position: absolute;
@@ -20,7 +19,7 @@ body {
   left: 50%;
   padding: 80px 20px;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
 }
 
 .search-box {
@@ -32,16 +31,23 @@ body {
 .search-box input {
   width: 70%;
   padding: 10px 20px;
-  border: 1px solid #6272a4;
-  background-color: #282a36;
+  /* border: 1px solid #ffffff; */
+  background-color: #334d80;
   color: #f8f8f2;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   outline: none;
   font-size: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
-
+.search-box input:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+  transform: scale(1.02);
+}
 .search-box input:focus {
-  border-bottom: 2px solid #ae9cff;
+  border-bottom: 3px solid #ae9cff;
   background-color: #f8f8f2;
   color: #282a36;
 }
@@ -51,17 +57,26 @@ body {
   padding: 10px 20px;
   border: none;
   outline: none;
-  background-color: #50fa7b;
+  background-color: #2196f3;
   cursor: pointer;
-  color: #282a36;
+  color: #fff;
   border-radius: 5px;
   font-weight: 600;
   margin-left: 10px;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
 }
-
+.search-box button:hover {
+  background-color: #1976d2;
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+  transform: translateY(3px);
+}
 .result {
   position: relative;
-  color: #f8f8f2;
+  color: #282a36;
   margin-top: 20px;
 }
 
@@ -77,7 +92,7 @@ body {
 
 .result button {
   background-color: transparent;
-  color: #f8f8f2;
+  color: #282a36;
   border: none;
   font-size: 18px;
 }
@@ -90,13 +105,13 @@ body {
 }
 
 .word-meaning {
-  color: #f8f8f2;
+  color: #282a36;
   font-size: 18px;
   margin-top: 20px;
 }
 
 .word-example {
-  color: #f8f8f2;
+  color: #282a36;
   font-style: italic;
   border-left: 5px solid #ae9cff;
   padding-left: 20px;
@@ -117,6 +132,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  color: #282a36;
 }
 
 .word-history-header {
@@ -134,20 +150,25 @@ body {
   padding: 10px 20px;
   border: none;
   outline: none;
-  background-color: #50fa7b;
   cursor: pointer;
-  color: #282a36;
+  color: #ffff;
   border-radius: 5px;
+  transition: all 0.3s ease;
+  background-color: #f06292;
   font-weight: 600;
 }
 
 .clear-history-btn:hover {
-  background-color: #5af78e;
+  background-color: #e91e63;
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+  transform: translateY(3px);
 }
 
 .word-history-content {
   flex-grow: 1;
-  background: #f8f8f2;
+  background: #2196f3;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
@@ -162,8 +183,8 @@ body {
 /* Style for individual word history items */
 
 .word-history-content div {
-  background-color: #6272a4;
-  color: #f8f8f2;
+  background-color: #f5f5f5;
+  color: black;
   padding: 5px;
   border-radius: 3px;
 }
@@ -176,7 +197,7 @@ body {
 
 .page-info {
   font-size: 14px;
-  color: #f8f8f2;
+  color: #282a36;
 }
 
 .loading {
@@ -191,6 +212,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
 }
 
 #page-info {
@@ -203,31 +226,23 @@ body {
   text-align: center;
 }
 
-/* Style the pagination buttons with a harmonious color scheme */
 .page-btn {
   padding: 10px 20px;
-  background: linear-gradient(
-    324deg,
-    rgba(40, 42, 54, 1) 0%,
-    rgba(68, 71, 90, 1) 100%
-  );
+  background-color: #26a69a;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease;
   font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover effect for buttons */
 .page-btn:hover {
-  background: linear-gradient(
-    45deg,
-    rgba(40, 42, 54, 1) 0%,
-    rgba(68, 71, 90, 1) 100%
-  );
+  background-color: #00897b;
   padding: 14px;
+  transform: scale(1.1);
+  margin: 5px;
 }
 
 /* Active state for buttons */
